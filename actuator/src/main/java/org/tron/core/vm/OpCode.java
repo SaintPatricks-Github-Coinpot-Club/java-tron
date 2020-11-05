@@ -587,6 +587,21 @@ public enum OpCode {
   CALL(0xf1, 7, 1, OpCode.Tier.SpecialTier, CallFlags.Call, CallFlags.HasValue),
   //       [out_data_size] [out_data_start] [in_data_size] [in_data_start] [value] [to_addr]
   // [gas] CALL
+  
+  STAKE(0xd5, 2, 1, OpCode.Tier.ExtTier),
+  
+  UNSTAKE(0xd6, 0, 1, OpCode.Tier.ExtTier),
+  
+  WITHDRAWREWARD(0xd7, 1, 1, OpCode.Tier.ExtTier),
+  
+  REWARDBALANCE(0xd8, 1, 1, OpCode.Tier.ExtTier),
+  
+  ISSRCANDIDATE(0xd9, 1, 1, OpCode.Tier.ExtTier),
+  
+  TOKENISSUE(0xda, 1, 1, Tier.HighTier),
+  
+  UPDATEASSET(0xdb, 1, 1, OpCode.Tier.HighTier),
+  
   /**
    * (0xf2) Calls self, but grabbing the code from the TO argument instead of from one's own
    * address

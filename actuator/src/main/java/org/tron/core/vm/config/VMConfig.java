@@ -65,7 +65,7 @@ public class VMConfig {
   }
 
   public static void initAllowMultiSign(long allow) {
-    ALLOW_MULTI_SIGN = allow == 1;
+    ALLOW_MULTI_SIGN = false;
   }
 
   public static void initAllowTvmTransferTrc10(long allow) {
@@ -81,7 +81,7 @@ public class VMConfig {
   }
 
   public static void initAllowShieldedTRC20Transaction(long allow) {
-    ALLOW_SHIELDED_TRC20_TRANSACTION = allow == 1;
+    ALLOW_SHIELDED_TRC20_TRANSACTION = false;
   }
 
   public static boolean getEnergyLimitHardFork() {
