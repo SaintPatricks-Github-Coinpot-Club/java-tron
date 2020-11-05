@@ -99,36 +99,36 @@ public class VM {
     try {
       OpCode op = OpCode.code(program.getCurrentOp());
       if (op == null) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       // hard fork for 3.2
       if (!VMConfig.allowTvmTransferTrc10()
           && (op == CALLTOKEN || op == TOKENBALANCE || op == CALLTOKENVALUE || op == CALLTOKENID)) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       if (!VMConfig.allowTvmConstantinople()
           && (op == SHL || op == SHR || op == SAR || op == CREATE2 || op == EXTCODEHASH)) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       if (!VMConfig.allowTvmSolidity059() && op == ISCONTRACT) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       if (!VMConfig.allowTvmIstanbul() && (op == SELFBALANCE || op == CHAINID)) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       if (!VMConfig.allowTvmStake()
               && (op == ISSRCANDIDATE || op == REWARDBALANCE || op == STAKE || op == UNSTAKE
                 || op == WITHDRAWREWARD)) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       if(!VMConfig.allowTvmAssetIssue() && (op == TOKENISSUE || op == UPDATEASSET)) {
-        throw Program.Exception.invalidOpCode(program.getCurrentOp());
+        logger.info("allowTvmAssetIssue");
       }
 
       program.setLastOp(op.val());
